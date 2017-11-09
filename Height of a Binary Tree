@@ -1,28 +1,18 @@
-/*
-    class Node 
-    	int data;
-    	Node left;
-    	Node right;
-	*/
-	static int height(Node root) {
+static int height(Node root) {
       	// Write your code here.
-        Node l = root;
+      Node l = root;
         Node r = root;
         int countLeft=0;
         int countRight=0;
-        while(l.left!=null){
-            l=l.left;
-            countLeft++;
-            
-        }
-        while(r.right!=null){
-            r=r.right;
-            countRight++;
-            
-        }
-        if (countLeft > countRight)
-            return countLeft;
+        if(root!=null){
+       countLeft=height(l.left) ;
+       countRight=height(r.right) ;
+       if (countLeft > countRight)
+            return countLeft+1;
         else
-            return countRight;
+            return countRight+1;
+        }
+        else
+            return -1;
+        
     }
-
