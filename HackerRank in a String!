@@ -7,17 +7,18 @@ import java.util.regex.*;
 public class Solution {
 
     static String hackerrankInString(String s) {
-        // Complete this function
+        // return "NO" if the string is null or empty
         if(s==null || s.length()==0)
             return "NO";
         int i, j;
         String hackerrank = "hackerrank";
+        //scan through the input string and increment the counter on hackerrank only if it's character matches the input character
         for(i=0,j=0;i< s.length() && j<hackerrank.length();i++){
             if(s.charAt(i)==hackerrank.charAt(j)){
-                j++;
-                continue;               
+                j++;              
             }    
         }
+        //counter covered the string length which means return "YES"
         if(j==hackerrank.length())
         return "YES";
         return "NO";        
